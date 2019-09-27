@@ -2,19 +2,28 @@
   <img src="https://images.atomist.com/sdm/SDM-Logo-Dark.png">
 </p>
 
-# @atomist-seeds/sdm-pack
+# @ipcrm/sdm-pack-ansible
 
-[![atomist sdm goals](http://badge.atomist.com/T29E48P34/atomist-seeds/sdm-pack/24939d09-fe00-4a7a-8d52-0fc4c9672100)](https://app.atomist.com/workspace/T29E48P34)
-[![npm version](https://img.shields.io/npm/v/@atomist-seeds/sdm-pack.svg)](https://www.npmjs.com/package/@atomist-seeds/sdm-pack)
+Using this pack you can schedule Ansible goals in the SDM.  This can be used with Ansible Engine, for either playbooks or adhoc commands.
 
-A starting point for an extension pack for an [Atomist][atomist]
-software delivery machine (SDM).
+Example adhoc:
+```typescript
+    const ansible = new AnsibleEngine()
+        .with({
+            args: ["-m", "ping", "localhost"],
+        });
+```
 
-Software delivery machines enable you to control your delivery process
-in code.  Think of it as an API for your software delivery.  See the
-[Atomist documentation][atomist-doc] for more information on the
-concept of a software delivery machine and how to create and develop
-an SDM.
+Example Plabook execution:
+```typescript
+    const ansiblePlaybook = new AnsibleEngine()
+        .with({
+            playbook: "test.yaml",
+        });
+```
+
+See the type docs for details on how to customize the `AnsibleEngine` goal. 
+
 
 [atomist-doc]: https://docs.atomist.com/ (Atomist Documentation)
 

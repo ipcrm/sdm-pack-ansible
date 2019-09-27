@@ -13,5 +13,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-export { SeedSupport } from "./lib/seed";
+export { AnsibleEngine } from "./lib/goal/ansible";
