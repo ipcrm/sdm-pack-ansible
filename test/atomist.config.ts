@@ -24,13 +24,11 @@ export function machineMaker(config: SoftwareDeliveryMachineConfiguration): Soft
 
     const ansible = new AnsibleEngine()
         .with({
-            cmdPrefix: "/Users/matt/Library/Python/2.7/bin",
             args: ["-m", "ping", "localhost"],
         });
 
     const ansiblePlaybook = new AnsibleEngine()
         .with({
-            cmdPrefix: "/Users/matt/Library/Python/2.7/bin",
             playbook: "test.yaml",
         });
 
